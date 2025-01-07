@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://fytix8s4wncq"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_qh21d"]
+[ext_resource type="Texture2D" uid="uid://b0itml8v4svcd" path="res://MobileRPG Resources/Images/Dungeon.png" id="2_ujik6"]
+[ext_resource type="Texture2D" uid="uid://db3hai4aaffgi" path="res://MobileRPG Resources/Images/image.png" id="3_lfwpe"]
+[ext_resource type="Texture2D" uid="uid://d08f4lexi0304" path="res://MobileRPG Resources/Images/monster-ghost-11variations (1).png" id="4_husln"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_qh21d")
+
+[node name="Dungeon" type="Sprite2D" parent="."]
+position = Vector2(226, 413)
+scale = Vector2(5.25, 5.25)
+texture = ExtResource("2_ujik6")
+
+[node name="Goblin" type="Sprite2D" parent="Dungeon"]
+position = Vector2(-2.85714, -57.3333)
+scale = Vector2(0.385488, 0.385487)
+texture = ExtResource("3_lfwpe")
+
+[node name="Player" type="Sprite2D" parent="Dungeon/Goblin"]
+position = Vector2(-39.0353, 168.494)
+scale = Vector2(1.97647, 1.97647)
+texture = ExtResource("4_husln")
+
+[node name="FASE1" type="Label" parent="."]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 95.0
+offset_bottom = 48.0
+text = "Fase 1 
+infernooblin"
+
+[node name="roladaplayerer" type="Label" parent="."]
+offset_left = 221.0
+offset_top = 438.0
+offset_right = 339.0
+offset_bottom = 500.0
+text = "Alma penada"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 185.0
+offset_top = 521.0
+offset_right = 284.0
+offset_bottom = 579.0
+action_mode = 0
+text = "Rolar"
+
+[node name="roladanpc" type="Label" parent="."]
+offset_left = 76.0
+offset_top = 173.0
+offset_right = 372.0
+offset_bottom = 234.0
+text = "O Gooblin que nunca olha para frente "
+
+[node name="ganhador" type="Label" parent="."]
+offset_left = 43.0
+offset_top = 299.0
+offset_right = 121.0
+offset_bottom = 334.0
+text = "Ganhador"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
